@@ -1,7 +1,8 @@
 h5py==3.16.0
 hdf5plugin==7.1.0
 lxml==6.0.2
-numpy==2.3.5
+numpy==1.26.4; python_version < "3.12"
+numpy==2.3.5; python_version >= "3.12"
 openpyxl==3.1.5
 pandas==2.3.3
 pypdf==6.1.1
