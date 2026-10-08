@@ -1,0 +1,47 @@
+# Local credentials and virtual environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+credentials/
+secrets/
+*.pem
+*.key
+
+# Python caches and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Provider downloads and local caches (never committed)
+data/cache/
+data/raw/
+data/*.csv
+data/*.csv.gz
+data/*.parquet
+
+# Workstation and sync metadata
+.Temp/
+.WeDrive
+.DS_Store
+Thumbs.db
+
+# Original private/unknown-license research materials
+/emocoll.py
+/影响市场情绪的因素.docx
+/微信图片_*.png
+/权重.png
+/情绪指数制作流程.xlsx
+/情绪指数制作流程.emmx
+/金巅回测基础数据集.xlsx
+/金巅情绪指数5.9更新.ipynb
+/金巅操作指南*.txt
+
+# Temporary isolated-checkout and build material
+.tmp/
+build/
+dist/
+*.egg-info/

@@ -1,0 +1,160 @@
+project:
+  name: "金巅模型策略适配复现版本（公开数据代理版）"
+  replication_mode: "adapted public-data replication"
+  status: "adapted"
+
+data:
+  provider: "rqalpha"
+  start_date: "2015-04-16"
+  end_date: "2026-09-30"
+  warmup_calendar_days: 14
+  expected_historical_securities: 1458
+  cache_dir: "data/cache"
+  rqalpha_bundle_dir: "data/cache/rqalpha/bundle"
+  network_timeout_seconds: 60
+  max_parallel_workers: 1
+  universes:
+    sse50:
+      code: "sh.000016"
+      official_index_code: "000016"
+      official_index_name: "上证50"
+      expected_constituents: 50
+      effective_date_overrides:
+        "publish:2015-05-14": "2015-05-20"
+      verified_change_dates:
+        - "2015-05-20"
+        - "2015-06-15"
+        - "2015-12-14"
+        - "2016-06-13"
+        - "2016-12-12"
+        - "2017-06-12"
+        - "2017-12-11"
+        - "2018-06-11"
+        - "2018-12-17"
+        - "2019-06-17"
+        - "2019-12-16"
+        - "2020-06-15"
+        - "2020-12-14"
+        - "2021-06-15"
+        - "2021-12-13"
+        - "2022-06-13"
+        - "2022-12-12"
+        - "2023-06-12"
+        - "2023-12-11"
+        - "2024-06-17"
+        - "2024-12-16"
+        - "2025-06-16"
+        - "2025-12-15"
+        - "2026-06-15"
+    csi500:
+      code: "sh.000905"
+      official_index_code: "000905"
+      official_index_name: "中证500"
+      expected_constituents: 500
+      required_notice_ids:
+        - 4003
+        - 4794
+        - 14223
+        - 14498
+        - 3006027
+      additional_official_sse_urls:
+        - "https://www.sse.com.cn/market/sseindex/diclosure/c/c_20150911_3985155.shtml"
+        - "https://www.sse.com.cn/market/sseindex/diclosure/c/c_20170209_4235948.shtml"
+      derived_cascade_events:
+        - effective_date: "2017-02-14"
+          trigger_notice_id: 4794
+          trigger_security: "600005"
+          reserve_notice_id: 4003
+          reserve_effective_date: "2016-12-12"
+          higher_index_code: "000300"
+          expected_remove: "600549"
+          expected_add: "600848"
+      effective_date_overrides:
+        "4718": "2017-01-18"
+        "12524": "2019-01-18"
+        "13420": "2021-09-28"
+      verified_change_dates:
+        - "2015-06-15"
+        - "2015-12-14"
+        - "2016-06-13"
+        - "2016-12-12"
+        - "2017-01-18"
+        - "2017-02-14"
+        - "2017-06-12"
+        - "2017-12-11"
+        - "2018-06-11"
+        - "2018-12-17"
+        - "2019-01-18"
+        - "2019-06-17"
+        - "2019-12-16"
+        - "2020-06-15"
+        - "2020-08-17"
+        - "2020-12-14"
+        - "2021-03-15"
+        - "2021-06-15"
+        - "2021-09-13"
+        - "2021-09-28"
+        - "2021-12-13"
+        - "2022-06-13"
+        - "2022-12-12"
+        - "2023-06-12"
+        - "2023-12-11"
+        - "2024-06-17"
+        - "2024-12-16"
+        - "2025-06-16"
+        - "2025-12-15"
+        - "2026-01-12"
+        - "2026-06-15"
+  execution_assets:
+    sse50: "sh.000016"
+    csi500: "sh.000905"
+
+migration_validation:
+  baostock_cache_root: "data/cache/_partial"
+  certified_audit_path: "audit/migration_validation.json"
+  allow_certified_audit_without_reference: true
+  minimum_reference_securities: 1000
+  price_relative_tolerance: 0.001
+  minimum_open_close_sign_agreement: 0.995
+  minimum_close_preclose_sign_agreement: 0.990
+  minimum_suspension_agreement: 0.990
+  minimum_signal_agreement: 0.950
+
+strategy:
+  headline_model: "model2"
+  rolling_window: 3
+  state_window: 5
+  signal_rule: "delta_sse50_minus_delta_csi500"
+  zero_signal_policy: "hold"
+  weights:
+    sse50_long: 0.40
+    csi500_short: -0.40
+    cash: 0.20
+
+backtest:
+  signal_at: "close"
+  execute_at: "next_close"
+  execution_delay_sessions: 1
+  one_way_cost_bps: 5.0
+  annualization_days: 252
+  risk_free_rate: 0.0
+  initial_nav: 1.0
+  benchmark: "equal_weight_sse50_csi500"
+
+outputs:
+  directory: "results"
+  equity_curve: "equity_curve.csv"
+  positions: "positions.csv"
+  trades: "trades.csv"
+  sentiment: "sentiment.csv"
+  signals: "signals.csv"
+  metrics: "metrics.json"
+  migration_validation: "migration_validation.json"
+  provenance: "data_provenance.json"
+  resolved_config: "resolved_config.yaml"
+  report_payload: "report.json"
+  report_html: "report.html"
+
+automation:
+  artifact_retention_days: 30
+  required_secrets: []

@@ -1,0 +1,55 @@
+{
+  "checks": {
+    "relative_50_500_signal": true,
+    "sign_close_minus_open": true,
+    "sign_close_minus_preclose": true,
+    "suspension": true
+  },
+  "close_consistency": {
+    "median_absolute_relative_difference": 0.0,
+    "observations": 1394540,
+    "p99_absolute_relative_difference": 0.0,
+    "tolerance": 0.001,
+    "within_relative_tolerance_rate": 0.9999971316706584
+  },
+  "difference_explanation": {
+    "corporate_actions": "Production preclose is audited from prior raw close, RQAlpha cash/split records and cumulative factors; the bundle reference is used only for classified complex-action or suspension-reset exceptions.",
+    "coverage": "Emotion and signals use the common-code sample with official PIT membership; they are validation statistics, not production inputs.",
+    "rounding": "The providers can differ by one quotation tick because source rounding is independent.",
+    "suspensions": "RQAlpha status comes only from suspended_days.h5; BaoStock tradestatus is used only as an external comparison label."
+  },
+  "emotion_comparison_rows": 11152,
+  "emotion_smoothed_correlation": 0.9997918132945244,
+  "emotion_smoothed_sign_agreement": 0.9983847810480976,
+  "gate_mode": "direct_read_only_comparison",
+  "generated_at_utc": "2026-10-08T08:39:29.264739+00:00",
+  "matched_end_date": "2026-09-30",
+  "matched_rows": 1394540,
+  "matched_start_date": "2015-04-02",
+  "open_consistency": {
+    "median_absolute_relative_difference": 0.0,
+    "observations": 1394540,
+    "p99_absolute_relative_difference": 0.0,
+    "tolerance": 0.001,
+    "within_relative_tolerance_rate": 0.9999971316706584
+  },
+  "preclose_consistency": {
+    "median_absolute_relative_difference": 0.0,
+    "observations": 1394540,
+    "p99_absolute_relative_difference": 0.0,
+    "tolerance": 0.001,
+    "within_relative_tolerance_rate": 0.9999734679535904
+  },
+  "production_provider": "RQAlpha free monthly bundle",
+  "reference_directory": "data\\cache\\_partial\\847780f67c263b38",
+  "reference_manifest_sha256": "2110e2ced0f80c31c9144e63fe07500f1e8a15504f31ebfe1e0ee6bb2358827c",
+  "reference_provider": "existing validated BaoStock cache (read-only comparison)",
+  "reference_security_files": 1092,
+  "relative_50_500_signal_agreement": 0.9937230989956959,
+  "shared_securities": 1092,
+  "sign_close_minus_open_agreement": 1.0,
+  "sign_close_minus_preclose_agreement": 0.9999749021182612,
+  "signal_comparison_rows": 5576,
+  "status": "passed",
+  "tradestatus_suspension_agreement": 0.9999992829176646
+}
