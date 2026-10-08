@@ -3386,7 +3386,7 @@
     "emotion_smoothed_correlation": 0.9997918132945244,
     "emotion_smoothed_sign_agreement": 0.9983847810480976,
     "gate_mode": "direct_read_only_comparison",
-    "generated_at_utc": "2026-10-08T08:39:29.264739+00:00",
+    "generated_at_utc": "2026-10-08T08:42:29.753786+00:00",
     "matched_end_date": "2026-09-30",
     "matched_rows": 1394540,
     "matched_start_date": "2015-04-02",
@@ -4444,8 +4444,8 @@
   "retrieved_at_utc": "2026-10-08T08:29:37.967149+00:00",
   "run": {
     "command": "python run.py all",
-    "commit_sha": "not-initialized",
-    "generated_at_utc": "2026-10-08T08:39:59.013192+00:00",
+    "commit_sha": "baacb59d9394cdf695a6ffbf561bf10b61ca0373",
+    "generated_at_utc": "2026-10-08T08:42:58.920391+00:00",
     "production_data": true,
     "runtime": "Python 3.12.14 on Windows-11-10.0.22631-SP0",
     "synthetic_fallback": false

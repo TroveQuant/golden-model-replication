@@ -22,7 +22,7 @@
   "emotion_smoothed_correlation": 0.9997918132945244,
   "emotion_smoothed_sign_agreement": 0.9983847810480976,
   "gate_mode": "direct_read_only_comparison",
-  "generated_at_utc": "2026-10-08T08:39:29.264739+00:00",
+  "generated_at_utc": "2026-10-08T08:42:29.753786+00:00",
   "matched_end_date": "2026-09-30",
   "matched_rows": 1394540,
   "matched_start_date": "2015-04-02",
