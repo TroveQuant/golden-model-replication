@@ -41,23 +41,23 @@
       }
     }
   },
-  "bundle_path": "data\\cache\\rqalpha\\bundle\\bundle",
+  "bundle_path": "data/cache/rqalpha/bundle",
   "cache_files": {
     "constituents.csv.gz": {
-      "bytes": 70347,
-      "sha256": "7f4762da7cce6eb89c53ebf1144e2d9da02f236376c60fd19ec4ca5b3e17180b"
+      "bytes": 70247,
+      "sha256": "782877a7f7851d1d0009a8beb7912f348f308df5962c6d220c180bcfcd7905c8"
     },
     "index_prices.csv.gz": {
-      "bytes": 84672,
-      "sha256": "69703de0a8b0b8a1ad40b353f6ac97cce52a8adcc211bea1698a1f1e4d7e0336"
+      "bytes": 84575,
+      "sha256": "179782e79eda03e275aa91f463fee3462ff5e235325aedfafe76cbab72d8439d"
     },
     "stock_prices.csv.gz": {
-      "bytes": 35280100,
-      "sha256": "7e15a8c4c117a50ef9b3773555d98c8e81d89b25217dede9f499d038a73002cc"
+      "bytes": 35270979,
+      "sha256": "002ab12a28d3e9198df5c3f22d5f3fe5c7314583c1c0d345e78b7bcac7783b4d"
     },
     "trade_dates.csv.gz": {
-      "bytes": 6428,
-      "sha256": "05248de998d9fac32961cead69590cc70589354b1e159b77df9d31717a29ae40"
+      "bytes": 6331,
+      "sha256": "627ff74f0c340a03d3dcf5d39ec467b40381ab1c5a5c2ae0f5be868d5fa83b70"
     }
   },
   "cache_schema": "rqalpha-official-membership-v3",
@@ -3363,6 +3363,7 @@
     }
   },
   "migration_validation": {
+    "certified_audit_sha256": "0f89086e1dfcebec88ba84947981467c0ace61d74249c14afa87e080a242a1e0",
     "checks": {
       "relative_50_500_signal": true,
       "sign_close_minus_open": true,
@@ -3385,7 +3386,7 @@
     "emotion_comparison_rows": 11152,
     "emotion_smoothed_correlation": 0.9997918132945244,
     "emotion_smoothed_sign_agreement": 0.9983847810480976,
-    "gate_mode": "direct_read_only_comparison",
+    "gate_mode": "certified_read_only_audit",
     "generated_at_utc": "2026-10-08T08:42:29.753786+00:00",
     "matched_end_date": "2026-09-30",
     "matched_rows": 1394540,
@@ -4441,13 +4442,13 @@
   "provider_version": "6.4.0",
   "requested_end": "2026-09-30",
   "requested_start": "2015-04-16",
-  "retrieved_at_utc": "2026-10-08T08:29:37.967149+00:00",
+  "retrieved_at_utc": "2026-10-08T09:18:52.319824+00:00",
   "run": {
     "command": "python run.py all",
-    "commit_sha": "baacb59d9394cdf695a6ffbf561bf10b61ca0373",
-    "generated_at_utc": "2026-10-08T08:42:58.920391+00:00",
+    "commit_sha": "c1a72cca59f8cf6f27206235d6ed3968c5609892",
+    "generated_at_utc": "2026-10-08T09:19:59.600096+00:00",
     "production_data": true,
-    "runtime": "Python 3.12.14 on Windows-11-10.0.22631-SP0",
+    "runtime": "Python 3.11.17 on Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
     "synthetic_fallback": false
   },
   "suspension_source": "suspended_days.h5",
