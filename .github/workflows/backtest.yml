@@ -2,8 +2,8 @@ name: Real-data backtest
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "17 3 5 * *"
+  # schedule:
+  #   - cron: "17 3 5 * *"
   push:
     branches: [main]
     paths:
